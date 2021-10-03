@@ -28,6 +28,12 @@ let validateState = (state) => {
     if (stateRegex.test(state)) return true;
     else throw("State is Incorrect");
 };
+//Zip Code
+let validateZip = (zip) => {
+    let zipRegex = RegExp("([0-9]{3} ?[0-9]{3}$)");
+    if (zipRegex.test(zip)) return true;
+    else throw("Zip Code is Incorrect");
+};
 //Email validation
 let validateEmail = (email) => {
     let emailRegex = RegExp(
@@ -47,6 +53,7 @@ module.exports = {
     validateAddress,
     validateCity,
     validateState,
+    validateZip,
     validatePhoneNumber,
     validateEmail,
   };
