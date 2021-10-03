@@ -39,5 +39,16 @@ class PersonInfo {
     );
   }
 }
-let personInfo = new PersonInfo("Paresh","Praveen","Ganesh Prasad","Mangalore","Karnataka","575014","9731497550","paresh@gmail.com");
-console.log(personInfo.toString());
+let personInfo = new PersonInfo("Paresh","Praveen","Ganesh Prasad","Mangalore","Karnataka","575014","91 9731497550","paresh@gmail.com");
+const validateContact = require("./ValidateContacts.js");
+try {
+  validateContact.validateFirstName(personInfo.firstName);
+  validateContact.validateLastName(personInfo.lastName);
+  validateContact.validateAddress(personInfo.address);
+  validateContact.validateCity(personInfo.city);
+  validateContact.validateState(personInfo.state);
+  validateContact.validatePhoneNumber(personInfo.phoneNumber);
+  validateContact.validateEmail(personInfo.email);
+} catch (invalid) {
+  console.error(invalid);
+}
