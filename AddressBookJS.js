@@ -166,9 +166,22 @@ function editContact() {
   }
   if (contactFound == 0) console.log("Contact Not Found");
 }
+function deleteContact(){
+  let contactFoundDelete = 0;
+  let name = prompt("Enter Your First Name of the person to delete ");
+  for (let i = 0; i < addressBookArray.length; i++) {
+    if (addressBookArray[i].firstName == name) {
+      contactFoundDelete = 1;
+      addressBookArray.splice(i,1);
+      console.log("Contact Deleted");
+      break;
+    }
+  }
+  if (contactFoundDelete == 0) console.log("Contact Not Found");
+}
 let i = 0;
 while (i == 0) {
-  console.log("Enter 1 to add contacts, 2 to edit Contacts, 3 to exit ");
+  console.log("Enter 1 to add contacts, 2 to edit Contacts, 3 to exit, 4 to Delete Contacts");
   let choice = prompt("Enter your choice ");
   switch (choice) {
     case "1":
@@ -180,6 +193,9 @@ while (i == 0) {
       break;
     case "3":
       i = 1;
+      break;
+    case "4":
+      deleteContact();
       break;
   }
 }
