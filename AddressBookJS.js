@@ -179,9 +179,13 @@ function deleteContact(){
   }
   if (contactFoundDelete == 0) console.log("Contact Not Found");
 }
+function countContact(){
+  return addressBookArray.length;
+}
+
 let i = 0;
 while (i == 0) {
-  console.log("Enter 1 to add contacts, 2 to edit Contacts, 3 to exit, 4 to Delete Contacts");
+  console.log("Enter 1 to add contacts, 2 to edit Contacts, 3 to exit, 4 to Delete Contacts, 5 to get count of contacts");
   let choice = prompt("Enter your choice ");
   switch (choice) {
     case "1":
@@ -196,6 +200,9 @@ while (i == 0) {
       break;
     case "4":
       deleteContact();
+      break;
+    case "5":
+      console.log("The number of Contacts in the address book are: "+countContact());
       break;
   }
 }
