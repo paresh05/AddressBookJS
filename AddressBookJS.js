@@ -45,6 +45,7 @@ class PersonInfo {
 }
 function addContact() {
   let firstName = prompt("Enter Your First Name ");
+  getFirstName(firstName);
   let lastName = prompt("Enter Your Last Name ");
   let address = prompt("Enter Your address ");
   let city = prompt("Enter Your city ");
@@ -182,6 +183,22 @@ function deleteContact(){
 function countContact(){
   return addressBookArray.length;
 }
+function getFirstName(firstNameCheck){
+  return firstNameCheck;
+}
+let sortAddressBook = () => {
+  addressBookArray.sort((a, b) => {
+    let firstName1 = a.firstName.toLowerCase();
+    let firstName2 = b.firstName.toLowerCase();
+    if (firstName1 < firstName2) {
+      return -1;
+    }
+    if (firstName1 > firstName2) {
+      return 1;
+    }
+    return 0;
+  });
+};
 
 let i = 0;
 while (i == 0) {
@@ -206,4 +223,11 @@ while (i == 0) {
       break;
   }
 }
-console.log(addressBookArray);
+for(let j=0;j<addressBookArray.length;j++){
+  console.log(addressBookArray[j]);
+}
+sortAddressBook();
+console.log("Sorted Address Book")
+for(let k=0;k<addressBookArray.length;k++){
+  console.log(addressBookArray[k]);
+}
